@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Multistep-Form</title>
+</head>
+<body>
+    <div class="container">
+        <!-- FIRST FORM -->
+        <form id="form1">
+            <h3>CREATE ACCOUNT</h3>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Confirm Password" required>
+
+            <div class="btn-box">
+                 <button id="next1">Next</button>
+            </div>
+        </form>
+        <!-- SECOND FORM -->
+        <form id="form2">
+            <h3>SOCIAL LINKS</h3>
+            <input type="text" placeholder="Medium">
+            <input type="text" placeholder="Github">
+            <input type="text" placeholder="LinkedIn">
+            <div class="btn-box">
+                <button id="back1">Back</button>
+                 <button id="next2">Next</button>
+            </div>
+        </form>
+        <!-- THIRD FORM -->
+        <form id="form3">
+            <h3>PERSONAL INFO</h3>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="text" placeholder="Phone Number" required>
+            <div class="btn-box">
+                <button id="back2">Back</button>
+                 <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+        </div>
+    </div>
+
+    <script>
+        let form1 = document.getElementById('form1');
+        let form2 = document.getElementById('form2');
+        let form3 = document.getElementById('form3');
+
+
+        let next1 = document.getElementById('next1');
+        let next2 = document.getElementById('next2');
+        let back1 = document.getElementById('back1');
+        let back2 = document.getElementById('back2');
+        let progress = document.getElementById('progress')
+        
+        next1.onclick = function(){
+            form1.style.left = '-450px';
+            form2.style.left = '40px';
+            progress.style.width= '240px'
+        }
+
+        back1.onclick = function(){
+            form1.style.left = '40px';
+            form2.style.left = '450px';
+            progress.style.width= '120px'
+        }
+
+       next2.onclick=function(){
+           form2.style.left = '-450px';
+           form3.style.left ='40px';
+           progress.style.width= '360px'
+       }
+
+        back2.onclick = function(){
+            form2.style.left = '40px';
+            form3.style.left = '450px';
+            progress.style.width= '240px';
+        }
+    </script>
+</body>
+</html>
